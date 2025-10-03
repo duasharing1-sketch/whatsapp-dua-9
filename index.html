@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Share Du'a on WhatsApp</title>
+</head>
+<body>
+<a id="manualLink" href="#" target="_blank" style="display:none;">Open WhatsApp</a>
+
+<script>
+const encodedText = "*Ya Allah%E2%80%A6%20Purify%20my%20heart*%0A%0AThis%20powerful%20du%E2%80%99a%20calls%20upon%20Allah%20%E2%80%94%20Malik-ul-Quddus%20(The%20King%2C%20The%20Most%20Pure)%20%E2%80%94%20to%20cleanse%20our%20heart%20from%20all%20anger%2C%20jealousy%2C%20arrogance%2C%20and%20unlawful%20desires.%20It%20nurtures%20noble%20character%20%E2%80%94%20the%20kind%20that%20draws%20you%20closer%20to%20Allah%20%E2%81%B7%20and%20His%20beloved%20Messenger%2C%20Rasulullah%20%E2%80%BF.%0A%0AIt%20asks%20for%20inner%20purification%20and%20noble%20character%2C%20inspired%20by%20the%20most%20perfect%20human%20being%20to%20ever%20walk%20the%20earth%3A%20Khayr-ul-Khalqillah%2C%20Rasulullah%20%E2%80%BF.%0A%0AFor%20when%20the%20heart%20is%20purified%2C%20the%20soul%20begins%20to%20shine%20%E2%80%94%20dressed%20with%20Divine%20light%2C%20blessings%2C%20and%20honor.%0A%0AAs%20Prophet%20Muhammad%20%E2%80%BF%20said%3A%0A%0A%E2%80%9CThe%20most%20beloved%20to%20me%20and%20the%20closest%20to%20me%20on%20the%20Day%20of%20Judgment%20are%20those%20with%20the%20best%20character.%E2%80%9D%20(Tirmidhi)%0A%0A*Ya%20Allah%20(O%20Allah)%2C%20Ya%20Malikul%20Quddus%20(O%20King%2C%20the%20Most%20Pure)%2C%20grant%20us%20hearts%20that%20are%20pure%20and%20sound%2C%20free%20from%20all%20anger%2C%20malice%2C%20jealousy%2C%20envy%2C%20arrogance%2C%20pride%2C%20unlawful%20lust%2C%20and%20greed.%20Adorn%20us%20with%20the%20best%20and%20most%20noble%20character%2C%20inspired%20by%20Your%20beloved%2C%20Habeebullah%2C%20Sultan-ul-Anbiya%2C%20Rasoolullah%2C%20Sayyidina%20Muhammad%20Sallallahu%20Alayhi%20Wasallam.%20Fill%20our%20hearts%20with%20a%20deep%20and%20unwavering%20love%20for%20him.%20Let%20this%20love%20purify%20our%20desires%2C%20guide%20our%20intentions%2C%20and%20transform%20our%20actions%20into%20those%20that%20are%20beloved%20and%20pleasing%20to%20You%20and%20Your%20beloved.*%0A%0AThis%20du'a%20is%20part%20of%20*The%20Supplication%20of%20Infinite%20Blessings*%20%E2%80%94%20a%20powerful%20collection%20of%20heartfelt%20supplications%20designed%20to%20benefit%20you%20in%20both%20this%20life%20and%20the%20next.%0A%0A*At%20Dua%20Sharing%2C%20our%20mission%20is%20simple*%3A%20%0ATo%20encourage%20sincere%20du'a%2C%20meaningful%20sharing%2C%20and%20to%20multiply%20blessings%20through%20a%20growing%20global%20chain%20of%20people%20making%20dua%20for%20one%20another%20every%20single%20day.%0A%0AAs%20Rasulullah%20%E2%80%BF%20said%3A%20%0A%0A%E2%80%9CThe%20supplication%20of%20a%20Muslim%20for%20his%20brother%20in%20his%20absence%20will%20certainly%20be%20answered.%20Every%20time%20he%20makes%20a%20supplication%20for%20good%20for%20his%20brother%2C%20the%20angel%20appointed%20for%20this%20task%20says%3A%20%E2%80%98Ameen!%20And%20may%20it%20be%20for%20you%20too.%E2%80%9D%0A%0AEvery%20post%20we%20share%20is%20taken%20directly%20from%20the%20full%20Supplication%20of%20Infinite%20Blessings%20%E2%80%94%20with%20the%20aim%20of%20moving%20hearts%2C%20inspiring%20action%2C%20and%20reminding%20us%20all%20of%20what%20truly%20matters.%0A%0AAccess%20the%20full%20supplication%20in%20both%20English%20and%20Arabic%20at%3A%20https%3A%2F%2Fwww.duasharing.com%0A%0AWhen%20you%20share%20this%20post%2C%20you%E2%80%99re%20not%20simply%20sharing%20a%20dua.%20You%E2%80%99re%20opening%20the%20door%20to%20millions%20of%20people%20making%20sincere%20du'a%20for%20you%20%E2%80%94%20with%20the%20Malaika%20(Angels)%20themselves%20saying%20%E2%80%9CAmeen%E2%80%9D%20to%20every%20single%20one.%0A%0AMay%20Allah%20accept%20it%20from%20you%2C%20and%20from%20everyone%20it%20reaches%20through%20you.%0A%0AAmeen";
+
+const waProtocol = "whatsapp://send?text=" + encodedText;
+const waWeb = "https://wa.me/?text=" + encodedText;
+
+const manualLink = document.getElementById('manualLink');
+manualLink.href = waWeb;
+
+async function tryShare() {
+  if (navigator.share) {
+    try { await navigator.share({ text: decodeURIComponent(encodedText) }); return; }
+    catch (err) { console.warn(err); }
+  }
+  try { window.location.href = waProtocol; setTimeout(() => { window.location.href = waWeb; }, 1200); }
+  catch (e) { window.location.href = waWeb; }
+}
+
+window.addEventListener('load', tryShare);
+</script>
+</body>
+</html>
