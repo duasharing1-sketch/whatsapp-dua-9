@@ -39,21 +39,11 @@ Access the full supplication in both English and Arabic at: https://www.duashari
 
 When you share this post, you’re not simply sharing a dua. You’re opening the door to millions of people making sincere dua for you — with the Malaika (Angels) themselves saying “Ameen” to every single one.
 
-May Allah accept it from you, and from everyone it reaches through you.
+May Allah accept it from you, and reward you for all those it reaches through you.
 
 Ameen`;
 
-    const fallbacks = {
-      'ﷻ': 'ﷻ (may His Majesty be exalted)',
-      'ﷺ': 'ﷺ (peace be upon him)'
-    };
-
-    let messageWithFallback = message;
-    for (const [symbol, replacement] of Object.entries(fallbacks)) {
-      messageWithFallback = messageWithFallback.replace(new RegExp(symbol, 'g'), replacement);
-    }
-
-    const encodedText = encodeURIComponent(messageWithFallback);
+    const encodedText = encodeURIComponent(message);
     const waProtocol = "whatsapp://send?text=" + encodedText;
     const waWeb = "https://wa.me/?text=" + encodedText;
 
@@ -63,7 +53,7 @@ Ameen`;
     async function tryShare() {
       try {
         if (navigator.share) {
-          await navigator.share({ text: messageWithFallback });
+          await navigator.share({ text: message });
         } else {
           window.location.href = waProtocol;
           setTimeout(() => { window.location.href = waWeb; }, 1200);
@@ -77,3 +67,4 @@ Ameen`;
   </script>
 </body>
 </html>
+
